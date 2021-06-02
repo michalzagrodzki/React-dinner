@@ -1,13 +1,16 @@
+import React from "react";
 import "./../styles/Home.css";
 
-function Details() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>This is details view</p>
-      </header>
-    </div>
-  );
+class Details extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>This is Details view</p>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default Details;

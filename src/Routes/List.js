@@ -1,13 +1,16 @@
+import React from "react";
 import "./../styles/Home.css";
 
-function List() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>This is list view</p>
-      </header>
-    </div>
-  );
+class List extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>This is List view</p>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default List;

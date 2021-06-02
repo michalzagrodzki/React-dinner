@@ -1,13 +1,16 @@
+import React from "react";
 import "./../styles/Home.css";
 
-function Table() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>This is table view</p>
-      </header>
-    </div>
-  );
+class Table extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>This is table view</p>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default Table;
