@@ -1,6 +1,6 @@
 import React from "react";
 import { getList } from "./../service/list";
-import { Table as TableItems } from "./../components/Table/table";
+import { Table as ItemsTable } from "./../components/Table/table";
 import { List as Items } from "./../mockup/list";
 import "./../styles/Home.css";
 
@@ -19,7 +19,7 @@ class Table extends React.Component {
       <div className="App">
         <header className="App-header">
           <p>This is table view</p>
-          <TableItems items={listData} />
+          <ItemsTable items={listData} />
         </header>
       </div>
     );
