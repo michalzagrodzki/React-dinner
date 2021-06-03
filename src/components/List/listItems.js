@@ -1,4 +1,5 @@
 import React from "react";
+import { Item } from "./item";
 
 const ListItems = (props) => {
   const items = props.items;
@@ -7,10 +8,7 @@ const ListItems = (props) => {
   }
   return items.map((item, index) => (
     <li key={index}>
-      <p>{item.title}</p>
-      <p>{item.price}</p>
-      <p>{item.weight}</p>
-      <p>{item.calories}</p>
+      <Item item={item} />
     </li>
   ));
 };
