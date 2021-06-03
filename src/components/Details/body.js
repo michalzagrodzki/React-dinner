@@ -1,14 +1,28 @@
 import React from "react";
+import { PropertiesList } from "./propertiesList";
+import { IngredientsList } from "./ingredientsList";
 
 const Body = (props) => {
-  const { weight, calories } = props.data;
   if (!props.data) {
     return null;
   }
+  const propertiesList = Object.entries(props.data)
+    .map(([key, value]) => {
+      return {
+        label: key,
+        value: value,
+      };
+    })
+    .filter((item) => {
+      return !item.value.length;
+    });
+  const ingredientsList = Object.entries(props.data).filter((item) => {
+    return item[1].length;
+  })[0][1];
   return (
     <div>
-      <p>{weight}</p>
-      <p>{calories}</p>
+      <PropertiesList list={propertiesList} />
+      <IngredientsList list={ingredientsList} />
     </div>
   );
 };

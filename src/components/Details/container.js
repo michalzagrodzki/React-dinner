@@ -8,11 +8,18 @@ const Container = (props) => {
   if (!item) {
     return null;
   }
+  const header = (({ title, price }) => ({ title, price }))(item);
+  const body = (({ weight, calories, ingredients }) => ({
+    weight,
+    calories,
+    ingredients,
+  }))(item);
+  const id = item.id;
   return (
     <div>
-      <Header data={item} />
-      <Body data={item} />
-      <Actions id={item.id} />
+      <Header data={header} />
+      <Body data={body} />
+      <Actions id={id} />
     </div>
   );
 };
