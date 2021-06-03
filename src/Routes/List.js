@@ -1,5 +1,5 @@
 import React from "react";
-import { Instance } from "./../service";
+import { getList } from "./../service/list";
 import "./../styles/Home.css";
 
 class List extends React.Component {
@@ -23,7 +23,7 @@ class List extends React.Component {
 
   async componentDidMount() {
     try {
-      const listData = await Instance.get("/list");
+      const listData = await getList();
 
       this.setState({
         ...this.state,
