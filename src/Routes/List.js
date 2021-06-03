@@ -12,6 +12,7 @@ class List extends React.Component {
   }
 
   render() {
+    const { listData } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -23,23 +24,16 @@ class List extends React.Component {
 
   async componentDidMount() {
     try {
-      const listData = await getList();
+      const response = await getList();
 
       this.setState({
-        ...this.state,
-        ...{
-          isLoading: false,
-          listData,
-        },
+        listData: response.data,
       });
     } catch (error) {
       console.log(`Axios request failed: ${error}`);
     } finally {
       this.setState({
-        ...this.state,
-        ...{
-          isLoading: false,
-        },
+        isLoading: false,
       });
     }
   }
