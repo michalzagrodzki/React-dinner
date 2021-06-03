@@ -1,5 +1,6 @@
 import React from "react";
 import { getList } from "./../service/list";
+import { ListItems } from "./../components/List/listItems";
 import "./../styles/Home.css";
 
 class List extends React.Component {
@@ -18,6 +19,7 @@ class List extends React.Component {
         <header className="App-header">
           <p>This is List view</p>
         </header>
+        <ListItems items={listData} />
       </div>
     );
   }
