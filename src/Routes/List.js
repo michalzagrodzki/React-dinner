@@ -1,6 +1,7 @@
 import React from "react";
 import { getList } from "./../service/list";
 import { ListItems } from "./../components/List/listItems";
+import { List as Items } from "./../mockup/list";
 import "./../styles/Home.css";
 
 class List extends React.Component {
@@ -18,8 +19,8 @@ class List extends React.Component {
       <div className="App">
         <header className="App-header">
           <p>This is List view</p>
+          <ListItems items={listData} />
         </header>
-        <ListItems items={listData} />
       </div>
     );
   }
@@ -36,6 +37,7 @@ class List extends React.Component {
     } finally {
       this.setState({
         isLoading: false,
+        listData: Items,
       });
     }
   }
