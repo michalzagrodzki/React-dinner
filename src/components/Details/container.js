@@ -4,7 +4,7 @@ import { Body } from "./body";
 import { Actions } from "./actions";
 
 const Container = (props) => {
-  const item = props.item;
+  const { item } = props;
   if (!item) {
     return null;
   }

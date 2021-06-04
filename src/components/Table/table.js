@@ -3,7 +3,7 @@ import { Header } from "./header";
 import { Body } from "./body";
 
 const Table = (props) => {
-  const items = props.items;
+  const { items } = props;
   if (!items) {
     return null;
   }

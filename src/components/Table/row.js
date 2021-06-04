@@ -3,7 +3,7 @@ import { Items } from "./items";
 
 const Row = (props) => {
   const { columns, header } = props;
-  if (!props.columns) {
+  if (!columns) {
     return null;
   }
   return (

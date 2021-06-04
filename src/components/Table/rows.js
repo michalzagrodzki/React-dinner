@@ -2,7 +2,7 @@ import React from "react";
 import { Row } from "./row";
 
 const Rows = (props) => {
-  const list = props.list;
+  const { list } = props;
   if (!list) {
     return null;
   }

@@ -2,7 +2,7 @@ import React from "react";
 import { Item } from "./item";
 
 const ListItems = (props) => {
-  const items = props.items;
+  const { items } = props;
   if (!props.items) {
     return null;
   }

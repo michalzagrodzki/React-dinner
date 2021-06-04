@@ -1,7 +1,7 @@
 import React from "react";
 
 const Item = (props) => {
-  const item = props.item;
+  const { item } = props;
   if (!props.item) {
     return null;
   }

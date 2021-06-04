@@ -1,8 +1,7 @@
 import React from "react";
 
 const Item = (props) => {
-  const item = props.value;
-  const header = props.header;
+  const { value: item, header } = props;
   if (!item) {
     return null;
   }
