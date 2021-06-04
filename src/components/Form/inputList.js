@@ -17,7 +17,12 @@ const InputList = (props) => {
   return list.map((input, index) => (
     <div key={index}>
       <label>{input.name}</label>
-      <input name={input.name} value={input.value} onChange={onInputChange} />
+      <input
+        name={input.name}
+        value={input.value}
+        type="text"
+        onChange={onInputChange}
+      />
     </div>
   ));
 };
