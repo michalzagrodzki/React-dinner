@@ -22,8 +22,43 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended"
+    ],
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "settings": { "react": { "version": "latest" } },
+    "rules": {
+      "eol-last": "warn",
+      "max-len": "warn",
+      "curly": "warn",
+      "no-empty-function": "warn",
+      "no-else-return": "warn",
+      "no-use-before-define": "warn",
+      "array-bracket-spacing": ["warn", "never"],
+      "block-spacing": "warn",
+      "camelcase": "warn",
+      "indent": ["warn", 2],
+      "jsx-quotes": ["warn", "prefer-double"],
+      "keyword-spacing": ["error", { "before": true, "after": true }],
+      "max-lines": ["warn", { "max": 70, "skipBlankLines": true, "skipComments": true }],
+      "max-lines-per-function": ["error", { "max": 40, "skipComments": true }],
+      "no-inline-comments": "warn",
+      "no-multiple-empty-lines": "warn",
+      "no-trailing-spaces": "warn",
+      "no-whitespace-before-property": "warn",
+      "object-curly-spacing": ["warn", "always"]
+    }
   },
   "browserslist": {
     "production": [
