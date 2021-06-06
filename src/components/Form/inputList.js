@@ -5,15 +5,20 @@ const InputList = (props) => {
   if (!props) {
     return null;
   }
-  const list = Object.entries(props).map(([key, value]) => {
-    if (value === null) {
-      value = "";
-    }
-    return {
-      name: key,
-      value: value,
-    };
-  });
+  const EMPTY_VALUE = "";
+  const list = Object.entries(props)
+    .map(([key, value]) => {
+      if (value === null) {
+        value = EMPTY_VALUE;
+      }
+      return {
+        name: key,
+        value: value,
+      };
+    })
+    .filter((input) => {
+      return input.value === EMPTY_VALUE;
+    });
   return list.map((input, index) => (
     <div key={index}>
       <label>{input.name}</label>
