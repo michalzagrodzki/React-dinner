@@ -38,9 +38,15 @@ class Form extends React.Component {
     );
   }
 
+  sweepState(state) {
+    delete state.isLoading;
+    return state;
+  }
+
   async handleSubmit() {
+    const filteredState = this.sweepState(this.state);
     const payload = {
-      body: this.state,
+      body: filteredState,
     };
     await postCustomOrder(payload);
   }
