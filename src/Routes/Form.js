@@ -31,17 +31,23 @@ class Form extends React.Component {
             calories={calories}
             ingredients={ingredients}
             onClick={(event) => this.handleSubmit(event)}
+            onChange={(event) => this.handleInputChange(event)}
           />
         </header>
       </div>
     );
   }
 
-  async handleSubmit(event) {
+  async handleSubmit() {
     const payload = {
-      body: event,
+      body: this.state,
     };
     await postCustomOrder(payload);
+  }
+  handleInputChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
   }
 }
 

@@ -3,27 +3,14 @@ import { InputList } from "./inputList";
 import { Submit } from "./submit";
 
 class Container extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: null,
-      email: null,
-      phone: null,
-      weight: null,
-      calories: null,
-      ingredients: null,
-    };
-  }
-  handleSubmit(event) {
-    this.props.onClick(event);
+  handleSubmit() {
+    this.props.onClick();
   }
   handleInputChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+    this.props.onChange(event);
   }
   render() {
-    const { name, email, phone, weight, calories, ingredients } = this.state;
+    const { name, email, phone, weight, calories, ingredients } = this.props;
     return (
       <div>
         <InputList
@@ -35,7 +22,7 @@ class Container extends React.Component {
           ingredients={ingredients}
           onInputChange={(event) => this.handleInputChange(event)}
         />
-        <Submit submit={() => this.handleSubmit(this.state)} />
+        <Submit submit={() => this.handleSubmit()} />
       </div>
     );
   }
