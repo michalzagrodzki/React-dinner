@@ -7,7 +7,7 @@ import { Item } from "./../mockup/item";
 import "./../styles/Home.css";
 
 class Details extends React.Component {
-  propTypes = {
+  static propTypes = {
     match: PropTypes.object.isRequired,
   };
 

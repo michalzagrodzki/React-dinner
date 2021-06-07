@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Actions extends React.Component {
-  propTypes = {
+  static propTypes = {
     id: PropTypes.number.isRequired,
   };
 
