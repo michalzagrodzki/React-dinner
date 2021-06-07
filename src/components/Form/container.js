@@ -4,15 +4,15 @@ import { InputList } from "./inputList";
 import { Submit } from "./submit";
 
 class Container extends React.Component {
-  propTypes = {
+  static propTypes = {
     onClick: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-    weight: PropTypes.string.isRequired,
-    calories: PropTypes.string.isRequired,
-    ingredients: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.string,
+    weight: PropTypes.string,
+    calories: PropTypes.string,
+    ingredients: PropTypes.string,
   };
 
   handleSubmit() {
