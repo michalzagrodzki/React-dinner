@@ -7,7 +7,7 @@ const ListItems = (props) => {
     items: PropTypes.array.isRequired,
   };
   const { items } = props;
-  if (!props.items) {
+  if (!items) {
     return null;
   }
   return items.map((item, index) => (
