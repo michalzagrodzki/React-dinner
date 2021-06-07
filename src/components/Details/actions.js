@@ -1,6 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Actions extends React.Component {
+  propTypes = {
+    id: PropTypes.number.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {

@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
@@ -38,7 +39,9 @@
       "ecmaVersion": 12,
       "sourceType": "module"
     },
-    "plugins": ["react"],
+    "plugins": [
+      "react"
+    ],
     "settings": {
       "react": {
         "version": "latest"
@@ -95,8 +98,12 @@
         "warn",
         "always"
       ],
-      "react/prop-types": ["warn"],
-      "react/sort-comp": ["warn"]
+      "react/prop-types": [
+        "warn"
+      ],
+      "react/sort-comp": [
+        "warn"
+      ]
     }
   },
   "browserslist": {

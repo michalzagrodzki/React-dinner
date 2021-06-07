@@ -13,18 +13,6 @@ class Table extends React.Component {
     };
   }
 
-  render() {
-    const { listData } = this.state;
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>This is table view</p>
-          <ItemsTable items={listData} />
-        </header>
-      </div>
-    );
-  }
-
   async componentDidMount() {
     try {
       const response = await getList();
@@ -40,6 +28,18 @@ class Table extends React.Component {
         listData: Items,
       });
     }
+  }
+
+  render() {
+    const { listData } = this.state;
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>This is table view</p>
+          <ItemsTable items={listData} />
+        </header>
+      </div>
+    );
   }
 }
 

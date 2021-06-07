@@ -17,6 +17,24 @@ class Form extends React.Component {
     };
   }
 
+  sweepState(state) {
+    delete state.isLoading;
+    return state;
+  }
+
+  async handleSubmit() {
+    const filteredState = this.sweepState(this.state);
+    const payload = {
+      body: filteredState,
+    };
+    await postCustomOrder(payload);
+  }
+  handleInputChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
+
   render() {
     const { name, email, phone, weight, calories, ingredients } = this.state;
     return (
@@ -36,24 +54,6 @@ class Form extends React.Component {
         </header>
       </div>
     );
-  }
-
-  sweepState(state) {
-    delete state.isLoading;
-    return state;
-  }
-
-  async handleSubmit() {
-    const filteredState = this.sweepState(this.state);
-    const payload = {
-      body: filteredState,
-    };
-    await postCustomOrder(payload);
-  }
-  handleInputChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
   }
 }
 

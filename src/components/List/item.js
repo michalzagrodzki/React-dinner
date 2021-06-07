@@ -1,16 +1,23 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Item = (props) => {
-  const { item } = props;
+  Item.propTypes = {
+    item: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    weight: PropTypes.string.isRequired,
+    calories: PropTypes.string.isRequired,
+  };
+  const { title, price, weight, calories } = props.item;
   if (!props.item) {
     return null;
   }
   return (
     <div>
-      <p>{item.title}</p>
-      <p>{item.price}</p>
-      <p>{item.weight}</p>
-      <p>{item.calories}</p>
+      <p>{title}</p>
+      <p>{price}</p>
+      <p>{weight}</p>
+      <p>{calories}</p>
     </div>
   );
 };

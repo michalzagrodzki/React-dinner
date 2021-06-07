@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Rows } from "./rows";
 
 const transformIntoValuesList = (list) => {
@@ -12,10 +13,10 @@ const transformIntoValuesList = (list) => {
 };
 
 const Body = (props) => {
+  Body.propTypes = {
+    items: PropTypes.array.isRequired,
+  };
   const items = transformIntoValuesList(props.items);
-  if (!items) {
-    return null;
-  }
   return (
     <tbody>
       <Rows list={items} />

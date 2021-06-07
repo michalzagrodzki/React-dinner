@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Row } from "./row";
 
 const transformIntoKeysList = (list) => {
@@ -9,10 +10,10 @@ const transformIntoKeysList = (list) => {
 };
 
 const Header = (props) => {
+  Header.propTypes = {
+    items: PropTypes.array.isRequired,
+  };
   const columns = transformIntoKeysList(props.items);
-  if (!columns) {
-    return null;
-  }
   return (
     <thead>
       <Row columns={columns} header />

@@ -1,6 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const PropertiesList = (props) => {
+  PropertiesList.propTypes = {
+    list: PropTypes.array.isRequired,
+  };
+
   const { list } = props;
   if (!list) {
     return null;

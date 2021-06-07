@@ -15,6 +15,23 @@ class Home extends React.Component {
     };
   }
 
+  async componentDidMount() {
+    try {
+      const response = await getList();
+      const shortResponse = response.data.slice(0, 2);
+      this.setState({
+        list: shortResponse,
+      });
+    } catch (error) {
+      console.log(`Axios request failed: ${error}`);
+    } finally {
+      this.setState({
+        isLoading: false,
+        list: Items.slice(0, 3),
+      });
+    }
+  }
+
   render() {
     const { list } = this.state;
     return (
@@ -33,23 +50,6 @@ class Home extends React.Component {
         </header>
       </div>
     );
-  }
-
-  async componentDidMount() {
-    try {
-      const response = await getList();
-      const shortResponse = response.data.slice(0, 2);
-      this.setState({
-        list: shortResponse,
-      });
-    } catch (error) {
-      console.log(`Axios request failed: ${error}`);
-    } finally {
-      this.setState({
-        isLoading: false,
-        list: Items.slice(0, 3),
-      });
-    }
   }
 }
 

@@ -1,9 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Header } from "./header";
 import { Body } from "./body";
 import { Actions } from "./actions";
 
 const Container = (props) => {
+  Container.propTypes = {
+    item: PropTypes.object.isRequired,
+  };
+
   const { item } = props;
   if (!item) {
     return null;

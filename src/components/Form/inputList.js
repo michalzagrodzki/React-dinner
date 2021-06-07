@@ -1,15 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const InputList = (props) => {
-  const { onInputChange } = props;
+  InputList.propTypes = {
+    onInputChange: PropTypes.func.isRequired,
+  };
   if (!props) {
     return null;
   }
-  const EMPTY_VALUE = "";
+
+  const { onInputChange } = props;
+  const VALID_EMPTY_VALUE = "";
   const list = Object.entries(props)
     .map(([key, value]) => {
       if (value === null) {
-        value = EMPTY_VALUE;
+        value = VALID_EMPTY_VALUE;
       }
       return {
         name: key,
@@ -17,7 +22,7 @@ const InputList = (props) => {
       };
     })
     .filter((input) => {
-      return input.value === EMPTY_VALUE;
+      return input.value === VALID_EMPTY_VALUE;
     });
   return list.map((input, index) => (
     <div key={index}>

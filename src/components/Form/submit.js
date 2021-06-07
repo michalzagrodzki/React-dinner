@@ -1,8 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Submit = (props) => {
+  Submit.propTypes = {
+    submit: PropTypes.func.isRequired,
+  };
   const { submit } = props;
-  if (!props) {
+  if (!submit) {
     return null;
   }
   return <button onClick={submit}>Post form</button>;
