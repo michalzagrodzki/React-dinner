@@ -30,6 +30,7 @@ class Form extends React.Component {
     await postCustomOrder(payload);
   }
   handleInputChange(event) {
+    event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value,
     });

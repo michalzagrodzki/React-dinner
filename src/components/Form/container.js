@@ -19,6 +19,7 @@ class Container extends React.Component {
     this.props.onClick();
   }
   handleInputChange(event) {
+    event.preventDefault();
     this.props.onChange(event);
   }
   render() {
