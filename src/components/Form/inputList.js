@@ -19,6 +19,7 @@ const InputList = (props) => {
       return {
         name: key,
         value: value,
+        type: key === "email" ? key : "text",
       };
     })
     .filter((input) => {
@@ -30,7 +31,7 @@ const InputList = (props) => {
       <input
         name={input.name}
         value={input.value}
-        type="text"
+        type={input.type}
         onChange={onInputChange}
       />
     </div>
