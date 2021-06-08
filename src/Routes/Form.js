@@ -4,8 +4,8 @@ import { Container } from "../components/Form/container.js";
 import "./../styles/Home.css";
 
 class Form extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       isLoading: true,
       name: null,

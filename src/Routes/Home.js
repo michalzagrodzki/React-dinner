@@ -7,8 +7,8 @@ import logo from "./../assets/logo.svg";
 import "./../styles/Home.css";
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       isLoading: true,
       list: null,

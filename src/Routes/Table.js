@@ -5,8 +5,8 @@ import { List as Items } from "./../mockup/list";
 import "./../styles/Home.css";
 
 class Table extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       isLoading: true,
       listData: null,
