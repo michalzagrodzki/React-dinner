@@ -13,7 +13,7 @@ const InputList = (props) => {
   const VALID_EMPTY_VALUE = "";
   const list = Object.entries(props)
     .map(([key, value]) => {
-      if (value === null) {
+      if (typeof value === "object") {
         value = VALID_EMPTY_VALUE;
       }
       return {
@@ -23,7 +23,7 @@ const InputList = (props) => {
       };
     })
     .filter((input) => {
-      return input.value === VALID_EMPTY_VALUE;
+      return typeof input.value !== "function";
     });
   return list.map((input, index) => (
     <div key={index}>
