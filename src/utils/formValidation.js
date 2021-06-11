@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 const validateName = (input) => {
   return "error";
 };
