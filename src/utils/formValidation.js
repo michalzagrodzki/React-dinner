@@ -1,23 +1,49 @@
-export const validateName = (input) => {
+const validateName = (input) => {
   return "error";
 };
 
-export const validateEmail = (input) => {
+const validateEmail = (input) => {
   return "error";
 };
 
-export const validatePhone = (input) => {
+const validatePhone = (input) => {
   return "error";
 };
 
-export const validateWeight = (input) => {
+const validateWeight = (input) => {
   return "error";
 };
 
-export const validateCalories = (input) => {
+const validateCalories = (input) => {
   return "error";
 };
 
-export const validateIngredients = (input) => {
+const validateIngredients = (input) => {
   return "error";
+};
+
+export const validateByInputType = (errorList, type, value) => {
+  switch (type) {
+    case "name":
+      errorList = { ...errorList, name: validateName(value) };
+      break;
+    case "email":
+      errorList = { ...errorList, email: validateEmail(value) };
+      break;
+    case "phone":
+      errorList = { ...errorList, phone: validatePhone(value) };
+      break;
+    case "weight":
+      errorList = { ...errorList, weight: validateWeight(value) };
+      break;
+    case "calories":
+      errorList = { ...errorList, calories: validateCalories(value) };
+      break;
+    case "ingredients":
+      errorList = { ...errorList, ingredients: validateIngredients(value) };
+      break;
+    default:
+      break;
+  }
+  return errorList;
 };
