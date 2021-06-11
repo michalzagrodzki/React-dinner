@@ -22,7 +22,7 @@ const validateIngredients = (input) => {
   return "error";
 };
 
-export const validateByInputType = (errorList, type, value) => {
+export const validateInputValue = (errorList, type, value) => {
   switch (type) {
     case "name":
       errorList = { ...errorList, name: validateName(value) };
@@ -46,4 +46,8 @@ export const validateByInputType = (errorList, type, value) => {
       break;
   }
   return errorList;
+};
+
+export const isErrors = (state) => {
+  return false;
 };
