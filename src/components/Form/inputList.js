@@ -13,13 +13,15 @@ const InputList = (props) => {
   const VALID_EMPTY_VALUE = "";
   const list = Object.entries(props)
     .map(([key, value]) => {
-      if (typeof value === "object") {
+      if (value === null) {
         value = VALID_EMPTY_VALUE;
       }
+      const error = props.errors[key];
       return {
         name: key,
         value: value,
         type: key === "email" ? key : "text",
+        error: error,
       };
     })
     .filter((input) => {
@@ -34,6 +36,7 @@ const InputList = (props) => {
         type={input.type}
         onChange={onInputChange}
       />
+      <span>{input.error}</span>
     </div>
   ));
 };

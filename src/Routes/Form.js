@@ -39,7 +39,6 @@ class Form extends React.Component {
     let errors = validateInputValue(this.state.errors, type, value);
     if (Object.entries(errors).length > 0) {
       this.setState({ errors: errors });
-      console.log(this.state);
       return;
     }
   }
@@ -52,7 +51,8 @@ class Form extends React.Component {
   }
 
   render() {
-    const { name, email, phone, weight, calories, ingredients } = this.state;
+    const { name, email, phone, weight, calories, ingredients, errors } =
+      this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -64,6 +64,7 @@ class Form extends React.Component {
             weight={weight}
             calories={calories}
             ingredients={ingredients}
+            errors={errors}
             onClick={(event) => this.handleSubmit(event)}
             onChange={(event) => this.handleInputChange(event)}
           />

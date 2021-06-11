@@ -13,6 +13,7 @@ class Container extends React.Component {
     weight: PropTypes.string,
     calories: PropTypes.string,
     ingredients: PropTypes.string,
+    errors: PropTypes.object,
   };
 
   handleSubmit() {
@@ -23,7 +24,8 @@ class Container extends React.Component {
     this.props.onChange(event);
   }
   render() {
-    const { name, email, phone, weight, calories, ingredients } = this.props;
+    const { name, email, phone, weight, calories, ingredients, errors } =
+      this.props;
     return (
       <div>
         <InputList
@@ -33,6 +35,7 @@ class Container extends React.Component {
           weight={weight}
           calories={calories}
           ingredients={ingredients}
+          errors={errors}
           onInputChange={(event) => this.handleInputChange(event)}
         />
         <Submit submit={() => this.handleSubmit()} />
