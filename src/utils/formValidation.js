@@ -61,6 +61,21 @@ export const validateInputValue = (errorList, type, value) => {
   return errorList;
 };
 
-export const isErrors = (state) => {
-  return false;
+export const isErrors = (list) => {
+  const errorsList = Object.entries(list).map(([key, value]) => {
+    return {
+      input: key,
+      message: value,
+    };
+  });
+  if (errorsList.length === 0) {
+    return false;
+  }
+  const definedErrors = errorsList.filter((item) => {
+    return item.message !== undefined;
+  });
+  if (definedErrors.length === 0) {
+    return false;
+  }
+  return true;
 };

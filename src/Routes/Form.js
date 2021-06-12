@@ -27,7 +27,7 @@ class Form extends React.Component {
 
   async handleSubmit() {
     const filteredState = this.sweepState(this.state);
-    if (!isErrors(filteredState)) {
+    if (!isErrors(filteredState.errors)) {
       this.setState({ submitError: null });
       const payload = { body: filteredState };
       await postCustomOrder(payload);
