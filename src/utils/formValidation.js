@@ -1,26 +1,38 @@
 /* eslint-disable indent */
+import {
+  ruleNoEmpty,
+  ruleTwoWords,
+  ruleNoSpecialCharacters,
+  ruleEmail,
+  ruleNumbers,
+} from "./validationRules";
+
 const validateName = (input) => {
-  return "error";
+  return (
+    ruleNoEmpty(input, "Name") ||
+    ruleTwoWords(input, "Name") ||
+    ruleNoSpecialCharacters(input)
+  );
 };
 
 const validateEmail = (input) => {
-  return "error";
+  return ruleNoEmpty(input, "Email") || ruleEmail(input);
 };
 
 const validatePhone = (input) => {
-  return "error";
+  return ruleNoEmpty(input, "Phone number") || ruleNumbers(input);
 };
 
 const validateWeight = (input) => {
-  return "error";
+  return ruleNoEmpty(input, "Weight") || ruleNumbers(input);
 };
 
 const validateCalories = (input) => {
-  return "error";
+  return ruleNumbers(input);
 };
 
 const validateIngredients = (input) => {
-  return "error";
+  return ruleNoEmpty(input, "Ingredients") || ruleNoSpecialCharacters(input);
 };
 
 export const validateInputValue = (errorList, type, value) => {
