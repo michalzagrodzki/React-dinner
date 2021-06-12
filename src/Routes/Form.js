@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import React from "react";
 import { postCustomOrder } from "./../service/orders";
 import { Container } from "../components/Form/container.js";
