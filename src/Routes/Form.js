@@ -51,8 +51,16 @@ class Form extends React.Component {
   }
 
   render() {
-    const { name, email, phone, weight, calories, ingredients, errors } =
-      this.state;
+    const {
+      name,
+      email,
+      phone,
+      weight,
+      calories,
+      ingredients,
+      errors,
+      submitError,
+    } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -65,6 +73,7 @@ class Form extends React.Component {
             calories={calories}
             ingredients={ingredients}
             errors={errors}
+            submitError={submitError}
             onClick={(event) => this.handleSubmit(event)}
             onChange={(event) => this.handleInputChange(event)}
           />

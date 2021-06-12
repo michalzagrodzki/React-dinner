@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { InputList } from "./inputList";
 import { Submit } from "./submit";
+import { SubmitMessage } from "./submitMessage";
 
 class Container extends React.Component {
   static propTypes = {
@@ -14,6 +15,7 @@ class Container extends React.Component {
     calories: PropTypes.string,
     ingredients: PropTypes.string,
     errors: PropTypes.object,
+    submitError: PropTypes.string,
   };
 
   handleSubmit() {
@@ -24,8 +26,16 @@ class Container extends React.Component {
     this.props.onChange(event);
   }
   render() {
-    const { name, email, phone, weight, calories, ingredients, errors } =
-      this.props;
+    const {
+      name,
+      email,
+      phone,
+      weight,
+      calories,
+      ingredients,
+      errors,
+      submitError,
+    } = this.props;
     return (
       <div>
         <InputList
@@ -38,6 +48,7 @@ class Container extends React.Component {
           errors={errors}
           onInputChange={(event) => this.handleInputChange(event)}
         />
+        <SubmitMessage message={submitError} />
         <Submit submit={() => this.handleSubmit()} />
       </div>
     );
