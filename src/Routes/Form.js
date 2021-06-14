@@ -3,7 +3,7 @@ import React from "react";
 import { postCustomOrder } from "./../service/orders";
 import { Container } from "../components/Form/container.js";
 import { validateInputValue, isErrors } from "../utils/formValidation";
-import "./../styles/Home.css";
+import "./../styles/Home.scss";
 
 class Form extends React.Component {
   constructor() {

@@ -4,7 +4,7 @@ import { getList } from "./../service/list";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { List as Items } from "./../mockup/list";
 import logo from "./../assets/logo.svg";
-import "./../styles/Home.css";
+import "./../styles/Home.scss";
 
 class Home extends React.Component {
   constructor() {

@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { getDetails } from "./../service/details";
 import { Container } from "./../components/Details/container";
 import { Item } from "./../mockup/item";
-import "./../styles/Home.css";
+import "./../styles/Home.scss";
 
 class Details extends React.Component {
   static propTypes = {

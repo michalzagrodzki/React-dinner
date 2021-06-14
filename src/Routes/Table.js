@@ -2,7 +2,7 @@ import React from "react";
 import { getList } from "./../service/list";
 import { Table as ItemsTable } from "./../components/Table/table";
 import { List as Items } from "./../mockup/list";
-import "./../styles/Home.css";
+import "./../styles/Home.scss";
 
 class Table extends React.Component {
   constructor() {
