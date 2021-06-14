@@ -11,6 +11,7 @@ const InputList = (props) => {
 
   const { onInputChange } = props;
   const VALID_EMPTY_VALUE = "";
+  const ALLOWED_INPUT_TYPE = "string";
   const list = Object.entries(props)
     .map(([key, value]) => {
       if (value === null) {
@@ -25,7 +26,7 @@ const InputList = (props) => {
       };
     })
     .filter((input) => {
-      return typeof input.value !== "function";
+      return typeof input.value === ALLOWED_INPUT_TYPE;
     });
   return list.map((input, index) => (
     <div key={index}>
