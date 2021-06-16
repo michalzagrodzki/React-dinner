@@ -10,11 +10,15 @@ const ListItems = (props) => {
   if (!items) {
     return null;
   }
-  return items.map((item, index) => (
-    <li key={index}>
-      <Item item={item} />
-    </li>
-  ));
+  return (
+    <ul className={"list__container"}>
+      {items.map((item, index) => (
+        <li key={index}>
+          <Item item={item} />
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export { ListItems };

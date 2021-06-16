@@ -13,8 +13,8 @@ const Item = (props) => {
     return null;
   }
   return (
-    <div>
-      <p>{title}</p>
+    <div className={"list__item"}>
+      <h4>{title}</h4>
       <p>{price}</p>
       <p>{weight}</p>
       <p>{calories}</p>

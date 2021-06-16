@@ -1,0 +1,41 @@
+// Palette.
+$palette: (
+  "background": #282c34,
+  "primary": #fdc912,
+  "secondary": #49bf9d,
+  "foreground--primary": #ffff,
+  "foreground--secondary": mix(#ffff, #0000, 97%),
+  "border--primary": #efefef,
+  "border__background--primary": #f7f7f7,
+  "font--primary": #000,
+  "font--secondary": mix(#000, #ffffff, 15%),
+  "shadow--primary": #38557524,
+);
+
+// Status
+$status: (
+  "success": #0f5132,
+  "error": #842029,
+  "warning": #664d03,
+);
+
+// Font.
+$font: (
+  family: (
+    "Lexend",
+    Helvetica,
+    sans-serif,
+  ),
+  weight: 400,
+  weight-bold: 600,
+);
+
+// Size.
+$size: (
+  border-radius: 0.35em,
+  height: 2.75em,
+  margin: 1em,
+  padding: 1em,
+  blur: 1em,
+  font: 16pt,
+);

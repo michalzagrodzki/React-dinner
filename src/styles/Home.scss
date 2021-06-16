@@ -1,9 +1,11 @@
+@import "./variables";
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -14,11 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -34,5 +32,34 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  &__container {
+    background-color: map-get($palette, "foreground--secondary");
+    border-radius: map-get($size, "border-radius");
+    padding: map-get($size, "padding");
+  }
+
+  &__item {
+    background-color: map-get($palette, "foreground--primary");
+    border-radius: map-get($size, "border-radius");
+    box-shadow: 0px 0px map-get($size, "blur")
+      map-get($palette, "shadow--primary");
+
+    h4 {
+      color: map-get($palette, font--primary);
+    }
+
+    p {
+      color: map-get($palette, font--primary);
+    }
   }
 }
