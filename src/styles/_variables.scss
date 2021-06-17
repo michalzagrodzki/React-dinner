@@ -9,6 +9,7 @@ $palette: (
   "border__background--primary": #f7f7f7,
   "font--primary": #000,
   "font--secondary": mix(#000, #ffffff, 15%),
+  "font--header": mix(#000, #ffffff, 1%),
   "shadow--primary": #38557524,
 );
 
@@ -38,4 +39,7 @@ $size: (
   padding: 1em,
   blur: 1em,
   font: 16pt,
+  container__width: 960px,
+  header__title__font-size: 3em,
+  header__caption__font-size: 1.25em,
 );

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Header } from "./../components/Shared/header";
 import { getList } from "./../service/list";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { List as Items } from "./../mockup/list";
@@ -35,10 +36,10 @@ class Home extends React.Component {
   render() {
     const { list } = this.state;
     return (
-      <div className="App">
+      <div className="app__container">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>React dinner app.</p>
+          <Header title={"Dinner App"} caption={"React"} />
           <ItemsList items={list} />
           <Link
             to={{

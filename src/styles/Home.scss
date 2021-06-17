@@ -1,8 +1,10 @@
 @import "./variables";
 @import "./mixins";
 
-.App {
+.app__container {
   text-align: center;
+  justify-content: center;
+  width: map-get($size, "container__width");
 }
 
 .App-logo {
@@ -14,17 +16,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  min-height: 100vh;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -40,6 +31,20 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.header__container {
+  color: map-get($palette, "font--header");
+
+  h1 {
+    font-size: map-get($size, "header__title__font-size");
+    margin: 0 0 1em 0;
+  }
+
+  p {
+    font-size: map-get($size, "header__caption__font-size");
+    margin: 0;
+  }
 }
 
 .list {
