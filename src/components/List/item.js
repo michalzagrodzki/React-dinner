@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Header } from "./itemHeader";
+import { Property } from "./itemProperty";
 
 const Item = (props) => {
   Item.propTypes = {
@@ -14,19 +16,10 @@ const Item = (props) => {
   }
   return (
     <div className={"list__item"}>
-      <div className={"list__item__header"}>
-        <h4>{title}</h4>
-        <h6>{price}</h6>
-      </div>
+      <Header title={title} price={price} />
       <div className={"row"}>
-        <div className={"row__item"}>
-          <label>weight</label>
-          <p>{weight} gr</p>
-        </div>
-        <div className={"row__item"}>
-          <label>calories</label>
-          <p>{calories}</p>
-        </div>
+        <Property label={"weight"} value={weight} />
+        <Property label={"calories"} value={calories} />
       </div>
     </div>
   );
