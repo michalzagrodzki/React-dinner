@@ -56,15 +56,56 @@ ul {
 
   &__item {
     background-color: map-get($palette, "foreground--primary");
+    display: flex;
+    flex-direction: column;
+    margin-bottom: map-get($size, "margin");
     @include border__radius;
     @include item__shadow;
 
-    h4 {
-      color: map-get($palette, font--primary);
+    &__header {
+      text-align: start;
+      padding: map-get($size, "padding");
+
+      h4 {
+        color: map-get($palette, font--primary);
+        font-size: map-get($size, "font") * 1.75;
+        font-weight: map-get($size, "font__weight--regular");
+        margin: 0;
+      }
+
+      h6 {
+        color: map-get($palette, primary);
+        font-size: map-get($size, "font") * 1.5;
+        font-weight: map-get($size, "font__weight--bold");
+        margin: 0;
+
+        &::before {
+          content: "$ ";
+          font-size: map-get($size, "font") * 0.85;
+        }
+      }
     }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &__item {
+    width: map-get($size, "width") * 5;
+    padding: map-get($size, "padding");
 
     p {
       color: map-get($palette, font--primary);
+      margin: 0;
+    }
+
+    label {
+      color: map-get($palette, font--secondary);
+      font-size: map-get($size, "font") * 0.75;
+      margin: 0;
     }
   }
 }

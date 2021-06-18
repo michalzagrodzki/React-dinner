@@ -7,9 +7,9 @@ $palette: (
   "foreground--secondary": mix(#ffff, #0000, 97%),
   "border--primary": #efefef,
   "border__background--primary": #f7f7f7,
-  "font--primary": #000,
-  "font--secondary": mix(#000, #ffffff, 15%),
-  "font--header": mix(#000, #ffffff, 1%),
+  "font--primary": #1e2021,
+  "font--secondary": mix(#1e2021, #ffffff, 15%),
+  "font--header": mix(#1e2021, #ffffff, 1%),
   "shadow--primary": #38557524,
 );
 
@@ -35,10 +35,13 @@ $font: (
 $size: (
   border-radius: 0.35em,
   height: 2.75em,
+  width: 1em,
   margin: 1em,
   padding: 1em,
   blur: 1em,
   font: 16pt,
+  font__weight--regular: 400,
+  font__weight--bold: 700,
   container__width: 960px,
   header__title__font-size: 3em,
   header__caption__font-size: 1.25em,

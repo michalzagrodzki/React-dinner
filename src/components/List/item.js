@@ -14,10 +14,20 @@ const Item = (props) => {
   }
   return (
     <div className={"list__item"}>
-      <h4>{title}</h4>
-      <p>{price}</p>
-      <p>{weight}</p>
-      <p>{calories}</p>
+      <div className={"list__item__header"}>
+        <h4>{title}</h4>
+        <h6>{price}</h6>
+      </div>
+      <div className={"row"}>
+        <div className={"row__item"}>
+          <label>weight</label>
+          <p>{weight} gr</p>
+        </div>
+        <div className={"row__item"}>
+          <label>calories</label>
+          <p>{calories}</p>
+        </div>
+      </div>
     </div>
   );
 };
