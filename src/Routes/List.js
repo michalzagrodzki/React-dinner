@@ -1,5 +1,6 @@
 import React from "react";
 import { getList } from "./../service/list";
+import { Header } from "./../components/Shared/header";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { List as Items } from "./../mockup/list";
 import "./../styles/Home.scss";
@@ -33,9 +34,9 @@ class List extends React.Component {
   render() {
     const { listData } = this.state;
     return (
-      <div className="App">
+      <div className="app__container">
         <header className="App-header">
-          <p>This is List view</p>
+          <Header title={"Dinners"} caption={"list view"} />
           <ItemsList items={listData} />
         </header>
       </div>
