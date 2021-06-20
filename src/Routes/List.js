@@ -5,6 +5,9 @@ import { ListItems as ItemsList } from "./../components/List/listItems";
 import { List as Items } from "./../mockup/list";
 import "./../styles/Home.scss";
 
+const HEADER_LABEL = "Dinners";
+const HEADER_CAPTION = "list view";
+
 class List extends React.Component {
   constructor() {
     super();
@@ -35,10 +38,8 @@ class List extends React.Component {
     const { listData } = this.state;
     return (
       <div className="app__container">
-        <header className="App-header">
-          <Header title={"Dinners"} caption={"list view"} />
-          <ItemsList items={listData} />
-        </header>
+        <Header title={HEADER_LABEL} caption={HEADER_CAPTION} />
+        <ItemsList items={listData} />
       </div>
     );
   }

@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import { Header } from "./../components/Shared/header";
 import { getDetails } from "./../service/details";
 import { Container } from "./../components/Details/container";
 import { Item } from "./../mockup/item";
 import "./../styles/Home.scss";
+
+const HEADER_LABEL = "Details";
 
 class Details extends React.Component {
   static propTypes = {
@@ -42,11 +45,9 @@ class Details extends React.Component {
   render() {
     const { item } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>This is Details view</p>
-          <Container item={item} />
-        </header>
+      <div className="app__container">
+        <Header title={HEADER_LABEL} />
+        <Container item={item} />
       </div>
     );
   }

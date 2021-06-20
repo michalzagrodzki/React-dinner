@@ -7,6 +7,9 @@ import { List as Items } from "./../mockup/list";
 import logo from "./../assets/logo.svg";
 import "./../styles/Home.scss";
 
+const HEADER_LABEL = "Dinner App";
+const HEADER_CAPTION = "React";
+
 class Home extends React.Component {
   constructor() {
     super();
@@ -37,18 +40,16 @@ class Home extends React.Component {
     const { list } = this.state;
     return (
       <div className="app__container">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Header title={"Dinner App"} caption={"React"} />
-          <ItemsList popular link items={list} />
-          <Link
-            to={{
-              pathname: "/form",
-            }}
-          >
-            Link to form
-          </Link>
-        </header>
+        <img src={logo} className="App-logo" alt="logo" />
+        <Header title={HEADER_LABEL} caption={HEADER_CAPTION} />
+        <ItemsList popular link items={list} />
+        <Link
+          to={{
+            pathname: "/form",
+          }}
+        >
+          Link to form
+        </Link>
       </div>
     );
   }
