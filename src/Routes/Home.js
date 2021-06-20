@@ -40,7 +40,7 @@ class Home extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <Header title={"Dinner App"} caption={"React"} />
-          <ItemsList items={list} />
+          <ItemsList popular link items={list} />
           <Link
             to={{
               pathname: "/form",

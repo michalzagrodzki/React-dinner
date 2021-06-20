@@ -54,6 +54,31 @@ ul {
     padding: map-get($size, "padding");
   }
 
+  &__header {
+    text-align: start;
+    padding: map-get($size, "padding");
+    padding-left: 0;
+    padding-top: 0;
+
+    h4 {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 1.15;
+      font-weight: map-get($size, "font__weight--regular");
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-align: center;
+    padding: 0;
+    h4 {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 1.15;
+      font-weight: map-get($size, "font__weight--regular");
+      margin: 0;
+    }
+  }
+
   &__item {
     background-color: map-get($palette, "foreground--primary");
     display: flex;
