@@ -18,3 +18,9 @@ body {
 a:link {
   text-decoration: none;
 }
+
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}

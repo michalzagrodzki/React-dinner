@@ -11,8 +11,10 @@ const Items = (props) => {
   if (!list) {
     return null;
   }
+  const ID_POSITION = 0;
+  const id = list[ID_POSITION];
   return list.map((value, index) => (
-    <Item key={index} value={value} header={header} />
+    <Item key={index} id={id} value={value} header={header} />
   ));
 };
 
