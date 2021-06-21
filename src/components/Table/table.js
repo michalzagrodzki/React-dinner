@@ -12,7 +12,7 @@ const Table = (props) => {
     return null;
   }
   return (
-    <table>
+    <table className={"table__container"}>
       <Header items={items} />
       <Body items={items} />
     </table>

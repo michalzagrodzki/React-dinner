@@ -15,7 +15,7 @@ const Header = (props) => {
   };
   const columns = transformIntoKeysList(props.items);
   return (
-    <thead>
+    <thead className={"table__header"}>
       <Row columns={columns} header />
     </thead>
   );

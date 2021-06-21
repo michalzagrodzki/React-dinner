@@ -1,0 +1,48 @@
+@import "./variables";
+@import "./mixins";
+
+.table {
+  &__container {
+    border-collapse: separate;
+    border-spacing: 0 map-get($size, "font") * 1.15;
+    width: 100%;
+    background-color: map-get($palette, "foreground--secondary");
+    @include border__radius;
+    padding: map-get($size, "padding");
+  }
+
+  &__header {
+    text-align: start;
+
+    tr th {
+      text-align: left;
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 0.85;
+      font-weight: map-get($size, "font__weight--regular");
+    }
+  }
+
+  &__body {
+    text-align: start;
+
+    tr td {
+      text-align: left;
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 1.15;
+      font-weight: map-get($size, "font__weight--regular");
+    }
+
+    tr td:nth-child(1) {
+      color: map-get($palette, font--secondary);
+    }
+
+    tr td:nth-child(2) {
+      font-weight: map-get($size, "font__weight--bold");
+    }
+
+    tr td:nth-child(3) {
+      color: map-get($palette, primary);
+      font-weight: map-get($size, "font__weight--bold");
+    }
+  }
+}

@@ -18,7 +18,7 @@ const Body = (props) => {
   };
   const items = transformIntoValuesList(props.items);
   return (
-    <tbody>
+    <tbody className={"table__body"}>
       <Rows list={items} />
     </tbody>
   );

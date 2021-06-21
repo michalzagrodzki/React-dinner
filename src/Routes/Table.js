@@ -3,7 +3,7 @@ import { getList } from "./../service/list";
 import { Header } from "./../components/Shared/header";
 import { Table as ItemsTable } from "./../components/Table/table";
 import { List as Items } from "./../mockup/list";
-import "./../styles/Home.scss";
+import "./../styles/Table.scss";
 
 const HEADER_LABEL = "Dinners";
 const HEADER_CAPTION = "table view";
