@@ -44,5 +44,9 @@
       color: map-get($palette, primary);
       font-weight: map-get($size, "font__weight--bold");
     }
+
+    tr:hover {
+      background-color: lighten(map-get($palette, primary), 35%);
+    }
   }
 }
