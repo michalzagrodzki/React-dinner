@@ -5,7 +5,7 @@ import { Header } from "./../components/Shared/header";
 import { getDetails } from "./../service/details";
 import { Container } from "./../components/Details/container";
 import { Item } from "./../mockup/item";
-import "./../styles/Home.scss";
+import "./../styles/Details.scss";
 
 const HEADER_LABEL = "Details";
 

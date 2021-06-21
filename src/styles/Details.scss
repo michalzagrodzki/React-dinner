@@ -1,0 +1,10 @@
+@import "./variables";
+@import "./mixins";
+
+.details {
+  &__container {
+    background-color: map-get($palette, "foreground--secondary");
+    @include border__radius;
+    padding: map-get($size, "padding");
+  }
+}

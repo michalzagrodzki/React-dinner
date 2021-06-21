@@ -21,7 +21,7 @@ const Container = (props) => {
   }))(item);
   const id = item.id;
   return (
-    <div>
+    <div className={"details__container"}>
       <Header data={header} />
       <Body data={body} />
       <Actions id={id} />
