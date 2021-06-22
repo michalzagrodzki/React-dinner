@@ -9,7 +9,11 @@ const Submit = (props) => {
   if (!submit) {
     return null;
   }
-  return <button onClick={submit}>Post form</button>;
+  return (
+    <button onClick={submit} className={"form__submit"}>
+      Post form
+    </button>
+  );
 };
 
 export { Submit };

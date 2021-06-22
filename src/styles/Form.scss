@@ -1,0 +1,79 @@
+@import "./variables";
+@import "./mixins";
+
+.form {
+  &__container {
+    background-color: map-get($palette, "foreground--primary");
+    @include border__radius;
+    padding: map-get($size, "padding") * 2;
+  }
+
+  &__header {
+    text-align: start;
+    padding: map-get($size, "padding");
+    padding-left: 0;
+    padding-top: 0;
+
+    h4 {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 1.5;
+      font-weight: map-get($size, "font__weight--bold");
+      margin: 0;
+    }
+
+    p {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 1;
+      font-weight: map-get($size, "font__weight--regular");
+      margin: 0;
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-top: map-get($size, "margin") * 1;
+    margin-bottom: map-get($size, "margin") * 1;
+
+    label {
+      color: map-get($palette, font--secondary);
+      font-size: map-get($size, "font") * 0.75;
+      font-weight: map-get($size, "font__weight--regular");
+      margin: 0;
+      margin-bottom: map-get($size, "margin") * 0.5;
+    }
+
+    input {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 1;
+      font-weight: map-get($size, "font__weight--bold");
+      padding: map-get($size, "padding") * 0.5;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid map-get($palette, font--secondary);
+
+      &:focus {
+        border-color: map-get($palette, primary);
+      }
+    }
+  }
+
+  &__submit {
+    @include border__radius;
+    font-size: map-get($size, "font");
+    font-weight: map-get($size, "font__weight--bold");
+    background-color: map-get($palette, primary);
+    border: none;
+    padding: map-get($size, "padding") * 0.5;
+    padding-left: map-get($size, "padding") * 3;
+    padding-right: map-get($size, "padding") * 3;
+    margin: map-get($size, "margin") * 1.5;
+
+    &:hover {
+      @include button__shadow;
+      cursor: pointer;
+      color: map-get($palette, foreground--primary);
+    }
+  }
+}

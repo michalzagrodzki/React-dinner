@@ -8,6 +8,8 @@ class Container extends React.Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
+    title: PropTypes.string,
+    caption: PropTypes.string,
     name: PropTypes.string,
     email: PropTypes.string,
     phone: PropTypes.string,
@@ -27,6 +29,8 @@ class Container extends React.Component {
   }
   render() {
     const {
+      title,
+      caption,
       name,
       email,
       phone,
@@ -37,7 +41,11 @@ class Container extends React.Component {
       submitError,
     } = this.props;
     return (
-      <div>
+      <div className={"form__container"}>
+        <div className={"form__header"}>
+          <h4>{title}</h4>
+          <p>{caption}</p>
+        </div>
         <InputList
           name={name}
           email={email}

@@ -30,7 +30,7 @@ const InputList = (props) => {
       return typeof input.value === ALLOWED_INPUT_TYPE;
     });
   return list.map((input, index) => (
-    <div key={index}>
+    <div key={index} className={"form__input"}>
       <label>{input.name}</label>
       <input
         name={input.name}
