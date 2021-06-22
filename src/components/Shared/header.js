@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Header = (props) => {
   Header.propTypes = {
     title: PropTypes.string.isRequired,
-    caption: PropTypes.string.isRequired,
+    caption: PropTypes.string,
   };
   const { title, caption } = props;
   if (!props.title) {

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Property = (props) => {
   Property.propTypes = {
     label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
   };
   const { label, value } = props;
   if (!props.value) {
