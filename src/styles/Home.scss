@@ -134,3 +134,22 @@ ul {
     }
   }
 }
+
+.link {
+  &__form {
+    padding: map-get($size, "padding");
+
+    p {
+      color: map-get($palette, foreground--primary);
+      font-size: map-get($size, "font") * 0.85;
+      font-weight: map-get($size, "font__weight--regular");
+      margin-bottom: 0;
+    }
+    h1 {
+      color: map-get($palette, foreground--primary);
+      font-size: map-get($size, "font") * 1.45;
+      font-weight: map-get($size, "font__weight--bold");
+      margin-top: 0;
+    }
+  }
+}

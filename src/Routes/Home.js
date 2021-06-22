@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Header } from "./../components/Shared/header";
 import { getList } from "./../service/list";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { List as Items } from "./../mockup/list";
+import { FormLink } from "./../components/Shared/formLink";
 import logo from "./../assets/logo.svg";
 import "./../styles/Home.scss";
 
 const HEADER_LABEL = "Dinner App";
 const HEADER_CAPTION = "React";
+const FORM_LINK_LABEL = "Place a custom order";
+const FORM_LINK_CAPTION = "Haven't found what you were looking for?";
 
 class Home extends React.Component {
   constructor() {
@@ -43,13 +45,7 @@ class Home extends React.Component {
         <img src={logo} className="App-logo" alt="logo" />
         <Header title={HEADER_LABEL} caption={HEADER_CAPTION} />
         <ItemsList popular link items={list} />
-        <Link
-          to={{
-            pathname: "/form",
-          }}
-        >
-          Link to form
-        </Link>
+        <FormLink label={FORM_LINK_LABEL} caption={FORM_LINK_CAPTION} />
       </div>
     );
   }
