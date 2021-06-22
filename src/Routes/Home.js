@@ -2,8 +2,8 @@ import React from "react";
 import { Header } from "./../components/Shared/header";
 import { getList } from "./../service/list";
 import { ListItems as ItemsList } from "./../components/List/listItems";
-import { List as Items } from "./../mockup/list";
 import { FormLink } from "./../components/Shared/formLink";
+import { List as Items } from "./../mockup/list";
 import logo from "./../assets/logo.svg";
 import "./../styles/Home.scss";
 
