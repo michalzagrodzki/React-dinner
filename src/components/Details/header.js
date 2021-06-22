@@ -10,10 +10,11 @@ const Header = (props) => {
   if (!title && !price) {
     return null;
   }
+
   return (
-    <div>
-      <p>{title}</p>
-      <p>{price}</p>
+    <div className={"details__header"}>
+      <h2>{title}</h2>
+      <h4>{price}</h4>
     </div>
   );
 };

@@ -12,6 +12,7 @@ const Body = (props) => {
   if (!data) {
     return null;
   }
+
   const propertiesList = Object.entries(data)
     .map(([key, value]) => {
       return {

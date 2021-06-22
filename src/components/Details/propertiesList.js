@@ -10,12 +10,16 @@ const PropertiesList = (props) => {
   if (!list) {
     return null;
   }
-  return list.map((item, index) => (
-    <div key={index}>
-      <p>{item.label}</p>
-      <p>{item.value}</p>
+  return (
+    <div className={"details__properties__container"}>
+      {list.map((item, index) => (
+        <div key={index} className={"details__properties__item"}>
+          <label>{item.label}</label>
+          <p>{item.value}</p>
+        </div>
+      ))}
     </div>
-  ));
+  );
 };
 
 export { PropertiesList };

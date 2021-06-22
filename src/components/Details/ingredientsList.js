@@ -10,11 +10,20 @@ const IngredientsList = (props) => {
   if (!list) {
     return null;
   }
-  return list.map((item, index) => (
-    <div key={index}>
-      <p>{item.name}</p>
+  return (
+    <div>
+      <div className={"details__ingredients__header"}>
+        <p>Ingredients</p>
+      </div>
+      <div className={"details__ingredients__container"}>
+        {list.map((item, index) => (
+          <div key={index} className={"details__ingredients__item"}>
+            <p>{item.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  ));
+  );
 };
 
 export { IngredientsList };

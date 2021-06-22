@@ -25,7 +25,7 @@ class Actions extends React.Component {
     }
 
     return (
-      <div>
+      <div className={"details__order"}>
         <button onClick={this.handleOrder}>Place an order</button>
       </div>
     );

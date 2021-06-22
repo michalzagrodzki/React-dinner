@@ -5,6 +5,11 @@
     map-get($palette, "shadow--primary");
 }
 
+@mixin button__shadow {
+  box-shadow: 0px 0px map-get($size, "blur")
+    lighten(map-get($palette, primary), 15%);
+}
+
 @mixin border__radius {
   border-radius: map-get($size, "border-radius");
 }

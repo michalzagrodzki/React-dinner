@@ -7,4 +7,103 @@
     @include border__radius;
     padding: map-get($size, "padding");
   }
+
+  &__header {
+    text-align: start;
+    padding: map-get($size, "padding");
+    padding-left: 0;
+    padding-top: 0;
+
+    h2 {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font") * 2;
+      font-weight: map-get($size, "font__weight--bold");
+      margin: 0;
+    }
+
+    h4 {
+      color: map-get($palette, primary);
+      font-size: map-get($size, "font") * 1.75;
+      font-weight: map-get($size, "font__weight--bold");
+      margin: 0;
+
+      &::before {
+        content: "$ ";
+        font-size: map-get($size, "font") * 0.85;
+      }
+    }
+  }
+
+  &__properties {
+    &__container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__item {
+      width: map-get($size, "width") * 5;
+      padding: map-get($size, "padding");
+
+      p {
+        color: map-get($palette, font--primary);
+        margin: 0;
+      }
+
+      label {
+        color: map-get($palette, font--secondary);
+        font-size: map-get($size, "font") * 0.75;
+        margin: 0;
+      }
+    }
+  }
+
+  &__ingredients {
+    &__header {
+      p {
+        font-size: map-get($size, "font") * 1.15;
+        font-weight: map-get($size, "font__weight--bold");
+        text-align: left;
+        margin-bottom: map-get($size, "margin");
+        margin-left: map-get($size, "margin") * 0.3;
+      }
+    }
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      @include border__radius;
+      @include item__shadow;
+      padding: map-get($size, "padding");
+      margin: map-get($size, "margin") * 0.3;
+
+      p {
+        font-size: map-get($size, "font") * 1;
+        font-weight: map-get($size, "font__weight--regular");
+        margin: 0;
+      }
+    }
+  }
+
+  &__order {
+    button {
+      @include border__radius;
+      font-size: map-get($size, "font");
+      font-weight: map-get($size, "font__weight--bold");
+      background-color: map-get($palette, primary);
+      border: none;
+      padding: map-get($size, "padding") * 0.5;
+      padding-left: map-get($size, "padding") * 3;
+      padding-right: map-get($size, "padding") * 3;
+      margin: map-get($size, "margin") * 1.5;
+
+      &:hover {
+        @include button__shadow;
+        cursor: pointer;
+        color: map-get($palette, foreground--primary);
+      }
+    }
+  }
 }
