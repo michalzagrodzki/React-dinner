@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const SUBMIT_LABEL = "Place your order";
+
 const Submit = (props) => {
   Submit.propTypes = {
     submit: PropTypes.func.isRequired,
@@ -11,7 +13,7 @@ const Submit = (props) => {
   }
   return (
     <button onClick={submit} className={"form__submit"}>
-      Post form
+      {SUBMIT_LABEL}
     </button>
   );
 };
