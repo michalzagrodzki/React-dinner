@@ -1,10 +1,10 @@
 import React from "react";
 import { Header } from "./../components/Shared/header";
 import { getList } from "./../service/list";
+import { Logo } from "./../components/Shared/logo";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { FormLink } from "./../components/Shared/formLink";
 import { List as Items } from "./../mockup/list";
-import logo from "./../assets/logo.svg";
 import "./../styles/Home.scss";
 
 const HEADER_LABEL = "Dinner App";
@@ -42,7 +42,7 @@ class Home extends React.Component {
     const { list } = this.state;
     return (
       <div className="app__container">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Logo />
         <Header title={HEADER_LABEL} caption={HEADER_CAPTION} />
         <ItemsList popular link items={list} />
         <FormLink label={FORM_LINK_LABEL} caption={FORM_LINK_CAPTION} />
