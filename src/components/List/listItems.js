@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Header } from "./listHeader";
+import { ListSwitch as Switch } from "./../Shared/listSwitch";
 import { ListLink } from "./listLink";
 import { Item } from "./item";
 
@@ -19,7 +20,7 @@ const ListItems = (props) => {
   }
   return (
     <ul className={"list__container"}>
-      {popular ? <Header label={HEADER_LABEL} /> : null}
+      {popular ? <Header label={HEADER_LABEL} /> : <Switch list />}
       {items.map((item, index) => (
         <li key={index}>
           <Item item={item} />

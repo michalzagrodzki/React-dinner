@@ -3,12 +3,15 @@
 
 .table {
   &__container {
-    border-collapse: separate;
-    border-spacing: 0 map-get($size, "font") * 1.15;
-    width: 100%;
     background-color: map-get($palette, "foreground--secondary");
-    @include border__radius;
     padding: map-get($size, "padding");
+    @include border__radius;
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 map-get($size, "font") * 1.15;
+    }
   }
 
   &__header {

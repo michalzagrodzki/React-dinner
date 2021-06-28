@@ -68,6 +68,19 @@ ul {
     }
   }
 
+  &__switch {
+    text-align: right;
+    margin: 0;
+
+    h4 {
+      color: map-get($palette, font--primary);
+      font-size: map-get($size, "font");
+      font-weight: map-get($size, "font__weight--regular");
+      margin: 0;
+      margin-bottom: map-get($size, "margin");
+    }
+  }
+
   &__link {
     text-align: center;
     padding: 0;

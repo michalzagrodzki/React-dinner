@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { ListSwitch as Switch } from "./../Shared/listSwitch";
 import { Header } from "./header";
 import { Body } from "./body";
 
@@ -12,10 +13,13 @@ const Table = (props) => {
     return null;
   }
   return (
-    <table className={"table__container"}>
-      <Header items={items} />
-      <Body items={items} />
-    </table>
+    <div className={"table__container"}>
+      <Switch />
+      <table>
+        <Header items={items} />
+        <Body items={items} />
+      </table>
+    </div>
   );
 };
 
