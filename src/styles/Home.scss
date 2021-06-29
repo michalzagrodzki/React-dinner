@@ -35,10 +35,11 @@ ul {
 
 .header__container {
   color: map-get($palette, "font--header");
+  margin-bottom: map-get($size, "margin") * 3;
 
   h1 {
     font-size: map-get($size, "header__title__font-size");
-    margin: 0 0 1em 0;
+    margin: 0;
   }
 
   p {
@@ -78,6 +79,7 @@ ul {
       font-weight: map-get($size, "font__weight--regular");
       margin: 0;
       margin-bottom: map-get($size, "margin");
+      @include text__link;
     }
   }
 
@@ -89,6 +91,7 @@ ul {
       font-size: map-get($size, "font") * 1.15;
       font-weight: map-get($size, "font__weight--regular");
       margin: 0;
+      @include text__link;
     }
   }
 
@@ -163,6 +166,28 @@ ul {
       font-size: map-get($size, "font") * 1.45;
       font-weight: map-get($size, "font__weight--bold");
       margin-top: 0;
+      @include text__link;
+    }
+  }
+
+  &__back {
+    position: absolute;
+
+    button {
+      color: map-get($palette, foreground--primary);
+      background-color: map-get($palette, background);
+      font-size: map-get($size, "font") * 1.45;
+      font-weight: map-get($size, "font__weight--bold");
+      margin-top: map-get($size, "margin");
+      padding: map-get($size, "padding") * 0.25;
+      @include border--primary;
+      @include border__radius;
+      @include text__link;
+
+      svg {
+        display: block;
+        height: map-get($size, button-height);
+      }
     }
   }
 }

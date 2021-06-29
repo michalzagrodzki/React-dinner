@@ -1,33 +1,9 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.scss";
-import Home from "./Routes/Home";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-const routes = [
-  {
-    path: "/",
-    exact: true,
-    component: Home,
-  },
-  {
-    path: "/list",
-    component: React.lazy(() => import("./Routes/List")),
-  },
-  {
-    path: "/table",
-    component: React.lazy(() => import("./Routes/Table")),
-  },
-  {
-    path: "/details/:id",
-    component: React.lazy(() => import("./Routes/Details")),
-  },
-  {
-    path: "/form",
-    component: React.lazy(() => import("./Routes/Form")),
-  },
-];
+import { routes } from "./routes";
 
 ReactDOM.render(
   <React.StrictMode>

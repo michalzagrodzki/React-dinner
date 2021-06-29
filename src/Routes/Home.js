@@ -43,7 +43,7 @@ class Home extends React.Component {
     return (
       <div className="app__container">
         <Logo />
-        <Header title={HEADER_LABEL} caption={HEADER_CAPTION} />
+        <Header home title={HEADER_LABEL} caption={HEADER_CAPTION} />
         <ItemsList popular link items={list} />
         <FormLink label={FORM_LINK_LABEL} caption={FORM_LINK_CAPTION} />
       </div>

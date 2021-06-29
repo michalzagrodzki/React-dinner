@@ -13,3 +13,19 @@
 @mixin border__radius {
   border-radius: map-get($size, "border-radius");
 }
+
+@mixin border--primary {
+  border: 1px solid map-get($palette, foreground--primary);
+  &:hover {
+    cursor: pointer;
+    color: map-get($palette, primary);
+    border: 1px solid map-get($palette, primary);
+  }
+}
+
+@mixin text__link {
+  &:hover {
+    cursor: pointer;
+    color: map-get($palette, primary);
+  }
+}

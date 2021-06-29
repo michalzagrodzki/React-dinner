@@ -19,9 +19,7 @@ const FormLink = (props) => {
           pathname: "/form",
         }}
       >
-        <div>
-          <h1>{label}</h1>
-        </div>
+        <h1>{label}</h1>
       </Link>
     </div>
   );
