@@ -16,7 +16,7 @@ export const routes = [
     component: React.lazy(() => import("./Routes/Table")),
   },
   {
-    path: "/details/:id",
+    path: "/dinner/:id",
     component: React.lazy(() => import("./Routes/Details")),
   },
   {

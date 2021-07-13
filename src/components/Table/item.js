@@ -19,7 +19,7 @@ const Item = (props) => {
     <td>
       <Link
         to={{
-          pathname: `/details/${id}`,
+          pathname: `/dinner/${id}`,
         }}
       >
         {item}

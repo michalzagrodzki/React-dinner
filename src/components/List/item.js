@@ -19,7 +19,7 @@ const Item = (props) => {
   return (
     <Link
       to={{
-        pathname: `/details/${id}`,
+        pathname: `/dinner/${id}`,
       }}
     >
       <div className={"list__item"}>
