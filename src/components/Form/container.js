@@ -46,18 +46,20 @@ class Container extends React.Component {
           <h4>{title}</h4>
           <p>{caption}</p>
         </div>
-        <InputList
-          name={name}
-          email={email}
-          phone={phone}
-          weight={weight}
-          calories={calories}
-          ingredients={ingredients}
-          errors={errors}
-          onInputChange={(event) => this.handleInputChange(event)}
-        />
-        <SubmitMessage message={submitError} />
-        <Submit submit={() => this.handleSubmit()} />
+        <form>
+          <InputList
+            name={name}
+            email={email}
+            phone={phone}
+            weight={weight}
+            calories={calories}
+            ingredients={ingredients}
+            errors={errors}
+            onInputChange={(event) => this.handleInputChange(event)}
+          />
+          <SubmitMessage message={submitError} />
+          <Submit submit={() => this.handleSubmit()} />
+        </form>
       </div>
     );
   }
