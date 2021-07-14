@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-const SUBMIT_LABEL = "Place your order";
+import { FORM } from "./../utils/labels";
 
 const Submit = (props) => {
   Submit.propTypes = {
@@ -13,7 +12,7 @@ const Submit = (props) => {
   }
   return (
     <button onClick={submit} className={"form__submit"}>
-      {SUBMIT_LABEL}
+      {FORM.SUBMIT_LABEL}
     </button>
   );
 };

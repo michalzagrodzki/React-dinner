@@ -5,9 +5,8 @@ import { Header } from "./../components/Shared/header";
 import { getDetails } from "./../service/details";
 import { Container } from "./../components/Details/container";
 import { Item } from "./../mockup/item";
+import { DETAILS } from "./../utils/labels";
 import "./../styles/Details.scss";
-
-const HEADER_LABEL = "Details";
 
 class Details extends React.Component {
   static propTypes = {
@@ -46,7 +45,7 @@ class Details extends React.Component {
     const { item } = this.state;
     return (
       <div className="app__container">
-        <Header title={HEADER_LABEL} />
+        <Header title={DETAILS.HEADER_LABEL} />
         <Container item={item} />
       </div>
     );

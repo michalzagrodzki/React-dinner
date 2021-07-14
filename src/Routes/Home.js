@@ -5,12 +5,8 @@ import { Logo } from "./../components/Shared/logo";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { FormLink } from "./../components/Shared/formLink";
 // import { List as Items } from "./../mockup/list";
+import { HOME } from "./../utils/labels";
 import "./../styles/Home.scss";
-
-const HEADER_LABEL = "Dinner App";
-const HEADER_CAPTION = "React";
-const FORM_LINK_LABEL = "Place a custom order";
-const FORM_LINK_CAPTION = "Haven't found what you were looking for?";
 
 class Home extends React.Component {
   constructor() {
@@ -43,9 +39,12 @@ class Home extends React.Component {
     return (
       <div className="app__container">
         <Logo />
-        <Header home title={HEADER_LABEL} caption={HEADER_CAPTION} />
+        <Header home title={HOME.HEADER_LABEL} caption={HOME.HEADER_CAPTION} />
         <ItemsList popular link items={list} />
-        <FormLink label={FORM_LINK_LABEL} caption={FORM_LINK_CAPTION} />
+        <FormLink
+          label={HOME.FORM_LINK_LABEL}
+          caption={HOME.FORM_LINK_CAPTION}
+        />
       </div>
     );
   }

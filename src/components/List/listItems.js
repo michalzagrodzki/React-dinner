@@ -4,9 +4,7 @@ import { Header } from "./listHeader";
 import { ListSwitch as Switch } from "./../Shared/listSwitch";
 import { ListLink } from "./listLink";
 import { Item } from "./item";
-
-const HEADER_LABEL = "Most popular dinners:";
-const LINK_LABEL = "View all dinners";
+import { LIST as LIST_LABELS } from "./../utils/labels";
 
 const ListItems = (props) => {
   ListItems.propTypes = {
@@ -20,13 +18,17 @@ const ListItems = (props) => {
   }
   return (
     <ul className={"list__container"}>
-      {popular ? <Header label={HEADER_LABEL} /> : <Switch list />}
+      {popular ? (
+        <Header label={LIST_LABELS.SUB_HEADER_LABEL} />
+      ) : (
+        <Switch list />
+      )}
       {items.map((item, index) => (
         <li key={index}>
           <Item item={item} />
         </li>
       ))}
-      {link ? <ListLink label={LINK_LABEL} /> : null}
+      {link ? <ListLink label={LIST_LABELS.LINK_LABEL} /> : null}
     </ul>
   );
 };

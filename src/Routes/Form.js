@@ -4,12 +4,8 @@ import { postCustomOrder } from "./../service/orders";
 import { Header } from "./../components/Shared/header";
 import { Container } from "../components/Form/container.js";
 import { validateInputValue, isErrors } from "../utils/formValidation";
+import { FORM } from "./../utils/labels";
 import "./../styles/Form.scss";
-
-const HEADER_LABEL = "Custom order form";
-const FORM_TITLE = "Tell us more about your dinner";
-const FORM_CAPTION =
-  "Please tell us a bit more about your dinner, so that we can prepare it.";
 
 class Form extends React.Component {
   constructor() {
@@ -70,10 +66,10 @@ class Form extends React.Component {
     } = this.state;
     return (
       <div className="app__container">
-        <Header title={HEADER_LABEL} />
+        <Header title={FORM.HEADER_LABEL} />
         <Container
-          title={FORM_TITLE}
-          caption={FORM_CAPTION}
+          title={FORM.FORM_TITLE}
+          caption={FORM.FORM_CAPTION}
           name={name}
           email={email}
           phone={phone}
