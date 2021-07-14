@@ -16,7 +16,7 @@ class List extends React.Component {
     super();
     this.state = {
       isLoading: true,
-      listData: null,
+      listData: [],
     };
   }
 
