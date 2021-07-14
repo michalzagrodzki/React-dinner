@@ -4,7 +4,7 @@ import { Header } from "./listHeader";
 import { ListSwitch as Switch } from "./../Shared/listSwitch";
 import { ListLink } from "./listLink";
 import { Item } from "./item";
-import { LIST as LIST_LABELS } from "./../utils/labels";
+import { LIST as LIST_LABELS } from "./../../utils/labels";
 
 const ListItems = (props) => {
   ListItems.propTypes = {
