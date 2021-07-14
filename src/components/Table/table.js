@@ -9,7 +9,7 @@ const Table = (props) => {
     items: PropTypes.array.isRequired,
   };
   const { items } = props;
-  if (!items) {
+  if (items.length === 0) {
     return null;
   }
   return (
