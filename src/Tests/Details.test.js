@@ -9,7 +9,7 @@ import { DETAILS as DETAILS_LABELS } from "./../utils/labels";
 
 jest.mock("axios");
 
-describe("Table Page", () => {
+describe("Details Page", () => {
   describe("Happy path", () => {
     axios.get.mockResolvedValue({ data: mockList });
     test("renders route title", async () => {
