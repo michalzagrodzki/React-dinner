@@ -32,3 +32,8 @@ export const FORM = {
     "Please tell us a bit more about your dinner, so that we can prepare it.",
   SUBMIT_LABEL: "Place your order",
 };
+
+export const SHARED = {
+  TABLE_LINK_LABEL: "Switch to table",
+  LIST_LINK_LABEL: "Switch to list",
+};

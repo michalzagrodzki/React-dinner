@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
-const TABLE_LINK_LABEL = "Switch to table";
-const LIST_LINK_LABEL = "Switch to list";
+import { SHARED } from "./../../utils/labels";
 
 const ListSwitch = (props) => {
   ListSwitch.propTypes = {
@@ -18,7 +16,7 @@ const ListSwitch = (props) => {
             pathname: `/table`,
           }}
         >
-          <h4>{TABLE_LINK_LABEL}</h4>
+          <h4>{SHARED.TABLE_LINK_LABEL}</h4>
         </Link>
       ) : (
         <Link
@@ -26,7 +24,7 @@ const ListSwitch = (props) => {
             pathname: `/list`,
           }}
         >
-          <h4>{LIST_LINK_LABEL}</h4>
+          <h4>{SHARED.LIST_LINK_LABEL}</h4>
         </Link>
       )}
     </div>
