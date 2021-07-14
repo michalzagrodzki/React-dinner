@@ -4,7 +4,7 @@ import { getList } from "./../service/list";
 import { Logo } from "./../components/Shared/logo";
 import { ListItems as ItemsList } from "./../components/List/listItems";
 import { FormLink } from "./../components/Shared/formLink";
-import { List as Items } from "./../mockup/list";
+// import { List as Items } from "./../mockup/list";
 import "./../styles/Home.scss";
 
 const HEADER_LABEL = "Dinner App";
@@ -29,11 +29,11 @@ class Home extends React.Component {
         list: shortResponse,
       });
     } catch (error) {
-      console.log(`Axios request failed: ${error}`);
+      // console.log(`Axios request failed: ${error}`);
     } finally {
       this.setState({
         isLoading: false,
-        list: Items.slice(0, 3),
+        // list: Items.slice(0, 3),
       });
     }
   }
