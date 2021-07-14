@@ -17,7 +17,7 @@ class Home extends React.Component {
     super();
     this.state = {
       isLoading: true,
-      list: null,
+      list: [],
     };
   }
 
