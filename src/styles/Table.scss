@@ -48,8 +48,12 @@
       font-weight: map-get($size, "font__weight--bold");
     }
 
-    tr:hover {
-      background-color: lighten(map-get($palette, primary), 35%);
+    tr {
+      @include transition;
+
+      &:hover {
+        background-color: lighten(map-get($palette, primary), 35%);
+      }
     }
   }
 }

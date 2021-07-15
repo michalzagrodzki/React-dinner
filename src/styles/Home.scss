@@ -79,6 +79,7 @@ ul {
       font-weight: map-get($size, "font__weight--regular");
       margin: 0;
       margin-bottom: map-get($size, "margin");
+      @include transition;
       @include text__link;
     }
   }
@@ -91,6 +92,7 @@ ul {
       font-size: map-get($size, "font") * 1.15;
       font-weight: map-get($size, "font__weight--regular");
       margin: 0;
+      @include transition;
       @include text__link;
     }
   }
@@ -167,6 +169,7 @@ ul {
       font-weight: map-get($size, "font__weight--bold");
       margin-top: 0;
       @include text__link;
+      @include transition;
     }
   }
 
@@ -183,6 +186,7 @@ ul {
       @include border--primary;
       @include border__radius;
       @include text__link;
+      @include transition;
 
       svg {
         display: block;
