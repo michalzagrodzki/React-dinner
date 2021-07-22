@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const VALID_EMPTY_VALUE = "";
 const ALLOWED_INPUT_TYPE = "string";
 
-const InputList = (props) => {
+export const InputList = (props) => {
   InputList.propTypes = {
     onInputChange: PropTypes.func.isRequired,
   };
@@ -42,5 +42,3 @@ const InputList = (props) => {
     </div>
   ));
 };
-
-export { InputList };

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SubmitMessage = (props) => {
+export const SubmitMessage = (props) => {
   SubmitMessage.propTypes = {
     message: PropTypes.string,
   };
@@ -11,5 +11,3 @@ const SubmitMessage = (props) => {
   }
   return <p>{message}</p>;
 };
-
-export { SubmitMessage };

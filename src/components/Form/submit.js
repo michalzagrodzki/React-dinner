@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FORM } from "./../../utils/labels";
 
-const Submit = (props) => {
+export const Submit = (props) => {
   Submit.propTypes = {
     submit: PropTypes.func.isRequired,
   };
@@ -16,5 +16,3 @@ const Submit = (props) => {
     </button>
   );
 };
-
-export { Submit };

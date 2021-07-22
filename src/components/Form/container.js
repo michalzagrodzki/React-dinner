@@ -4,7 +4,7 @@ import { InputList } from "./inputList";
 import { Submit } from "./submit";
 import { SubmitMessage } from "./submitMessage";
 
-class Container extends React.Component {
+export default class Container extends React.Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
@@ -64,5 +64,3 @@ class Container extends React.Component {
     );
   }
 }
-
-export { Container };
