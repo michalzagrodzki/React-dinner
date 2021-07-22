@@ -2,12 +2,12 @@
 import React from "react";
 import { postCustomOrder } from "./../service/orders";
 import { Header } from "./../components/Shared/header";
-import { Container } from "../components/Form/container.js";
+import Container from "../components/Form/container.js";
 import { validateInputValue, isErrors } from "../utils/formValidation";
 import { FORM } from "./../utils/labels";
 import "./../styles/Form.scss";
 
-class Form extends React.Component {
+export default class Form extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -85,5 +85,3 @@ class Form extends React.Component {
     );
   }
 }
-
-export default Form;

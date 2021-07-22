@@ -8,7 +8,7 @@ import { FormLink } from "./../components/Shared/formLink";
 import { HOME } from "./../utils/labels";
 import "./../styles/Home.scss";
 
-class Home extends React.Component {
+export default class Home extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -49,5 +49,3 @@ class Home extends React.Component {
     );
   }
 }
-
-export default Home;

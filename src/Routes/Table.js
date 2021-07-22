@@ -6,7 +6,7 @@ import { FormLink } from "./../components/Shared/formLink";
 import { List as Items } from "./../mockup/list";
 import { TABLE as TABLE_LABELS } from "./../utils/labels";
 import "./../styles/Table.scss";
-class Table extends React.Component {
+export default class Table extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -49,5 +49,3 @@ class Table extends React.Component {
     );
   }
 }
-
-export default Table;

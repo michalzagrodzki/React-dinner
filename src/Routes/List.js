@@ -7,7 +7,7 @@ import { FormLink } from "./../components/Shared/formLink";
 import { LIST as LIST_LABELS } from "./../utils/labels";
 import "./../styles/Home.scss";
 
-class List extends React.Component {
+export default class List extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -50,5 +50,3 @@ class List extends React.Component {
     );
   }
 }
-
-export default List;
