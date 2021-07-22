@@ -6,6 +6,7 @@ import { ListItems as ItemsList } from "./../components/List/listItems";
 import { FormLink } from "./../components/Shared/formLink";
 // import { List as Items } from "./../mockup/list";
 import { HOME } from "./../utils/labels";
+import { shortenList } from "./../utils/helpers";
 import "./../styles/Home.scss";
 
 export default class Home extends React.Component {
@@ -20,9 +21,8 @@ export default class Home extends React.Component {
   async componentDidMount() {
     try {
       const response = await getList();
-      const shortResponse = response.data.slice(0, 2);
       this.setState({
-        list: shortResponse,
+        list: shortenList(response.data),
       });
     } catch (error) {
       // console.log(`Axios request failed: ${error}`);
