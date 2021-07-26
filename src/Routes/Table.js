@@ -3,7 +3,7 @@ import { getList } from "./../service/list";
 import { Header } from "./../components/Shared/header";
 import { Table as ItemsTable } from "./../components/Table/table";
 import { FormLink } from "./../components/Shared/formLink";
-import { List as Items } from "./../mockup/list";
+// import { List as Items } from "./../mockup/list";
 import { TABLE as TABLE_LABELS } from "./../utils/labels";
 import "./../styles/Table.scss";
 export default class Table extends React.Component {
@@ -27,7 +27,7 @@ export default class Table extends React.Component {
     } finally {
       this.setState({
         isLoading: false,
-        listData: Items,
+        // listData: Items,
       });
     }
   }

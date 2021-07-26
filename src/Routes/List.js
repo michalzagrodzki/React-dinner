@@ -2,7 +2,7 @@ import React from "react";
 import { getList } from "./../service/list";
 import { Header } from "./../components/Shared/header";
 import { ListItems as ItemsList } from "./../components/List/listItems";
-import { List as Items } from "./../mockup/list";
+// import { List as Items } from "./../mockup/list";
 import { FormLink } from "./../components/Shared/formLink";
 import { LIST as LIST_LABELS } from "./../utils/labels";
 import "./../styles/Home.scss";
@@ -28,7 +28,7 @@ export default class List extends React.Component {
     } finally {
       this.setState({
         isLoading: false,
-        listData: Items,
+        // listData: Items,
       });
     }
   }
