@@ -7,8 +7,7 @@ export const getDetails = (payload) =>
     transformResponse: [
       (data) => {
         try {
-          const response = JSON.parse(data);
-          return response;
+          return data;
         } catch (error) {
           throw Error(error);
         }
