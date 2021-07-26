@@ -3,7 +3,7 @@ import { Instance } from "./index";
 export const getDetails = (payload) =>
   Instance({
     method: "GET",
-    url: `/details/${payload.id}`,
+    url: `/dinners/details/${payload.id}`,
     transformResponse: [
       (data) => {
         try {

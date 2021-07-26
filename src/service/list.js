@@ -3,7 +3,7 @@ import { Instance } from "./index";
 export const getList = () =>
   Instance({
     method: "GET",
-    url: "/list",
+    url: "/dinners",
     transformResponse: [
       (data) => {
         try {
