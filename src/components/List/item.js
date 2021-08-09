@@ -7,12 +7,12 @@ import { Property } from "./itemProperty";
 const Item = (props) => {
   Item.propTypes = {
     item: PropTypes.object.isRequired,
-    id: PropTypes.number.isRequired,
+    _id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     weight: PropTypes.string.isRequired,
     calories: PropTypes.string.isRequired,
   };
-  const { id, title, price, weight, calories } = props.item;
+  const { _id: id, title, price, weight, calories } = props.item;
   if (!props.item) {
     return null;
   }
