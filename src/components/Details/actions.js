@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class Actions extends React.Component {
   static propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
   };
 
   constructor(props) {

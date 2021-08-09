@@ -19,7 +19,7 @@ const Container = (props) => {
     calories,
     ingredients,
   }))(item);
-  const id = item.id;
+  const { _id: id } = item;
   return (
     <div className={"details__container"}>
       <Header data={header} />
