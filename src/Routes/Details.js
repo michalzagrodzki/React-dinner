@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { Header } from "./../components/Shared/header";
 import { getDetails } from "./../service/details";
 import { Container } from "./../components/Details/container";
-import { Item } from "./../mockup/item";
+// import { Item } from "./../mockup/item";
 import { DETAILS } from "./../utils/labels";
 import "./../styles/Details.scss";
 
@@ -36,7 +36,7 @@ class Details extends React.Component {
     } finally {
       this.setState({
         isLoading: false,
-        item: Item,
+        // item: Item,
       });
     }
   }
