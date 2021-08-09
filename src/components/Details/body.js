@@ -23,9 +23,16 @@ const Body = (props) => {
     .filter((item) => {
       return !item.value.length;
     });
-  const ingredientsList = Object.entries(data).filter((item) => {
+
+  let ingredientsDictionary = Object.entries(data).filter((item) => {
     return item[1].length;
-  })[0][1];
+  })[0];
+  ingredientsDictionary = ingredientsDictionary
+    ? ingredientsDictionary
+    : ["", []];
+
+  const ingredientsList = ingredientsDictionary[1];
+
   return (
     <div>
       <PropertiesList list={propertiesList} />
