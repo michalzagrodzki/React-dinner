@@ -6,8 +6,8 @@ const transformIntoKeysList = (list) => {
   if (!list && list.length < 1) {
     return [];
   }
-  const headerKeys = Object.keys(list[0]);
-  return headerKeys;
+  const keysList = Object.keys(list[0]);
+  return keysList;
 };
 
 const Header = (props) => {
