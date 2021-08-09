@@ -7,6 +7,7 @@ import { Actions } from "./actions";
 const Container = (props) => {
   Container.propTypes = {
     item: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired,
   };
 
   const { item } = props;
@@ -19,12 +20,14 @@ const Container = (props) => {
     calories,
     ingredients,
   }))(item);
-  const { _id: id } = item;
+  const handleAction = function () {
+    props.onClick();
+  };
   return (
     <div className={"details__container"}>
       <Header data={header} />
       <Body data={body} />
-      <Actions id={id} />
+      <Actions onClick={(event) => handleAction(event)} />
     </div>
   );
 };
