@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import React from "react";
-import { postCustomOrder } from "./../service/orders";
+import { postOrder } from "./../service/orders";
 import { Header } from "./../components/Shared/header";
 import Container from "../components/Form/container.js";
 import { validateInputValue, isErrors } from "../utils/formValidation";
@@ -33,7 +33,7 @@ export default class Form extends React.Component {
     if (!isErrors(filteredState.errors)) {
       this.setState({ submitError: null });
       const payload = { body: filteredState };
-      await postCustomOrder(payload);
+      await postOrder(payload);
     } else {
       this.setState({ submitError: "Please check input errors" });
     }
