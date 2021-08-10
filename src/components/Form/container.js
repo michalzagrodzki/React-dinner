@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { InputList } from "./inputList";
+import { SelectList } from "./selectList";
 import { Submit } from "./submit";
 import { SubmitMessage } from "./submitMessage";
 
@@ -8,6 +9,7 @@ export default class Container extends React.Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
     title: PropTypes.string,
     caption: PropTypes.string,
     name: PropTypes.string,
@@ -15,7 +17,8 @@ export default class Container extends React.Component {
     phone: PropTypes.string,
     weight: PropTypes.string,
     calories: PropTypes.string,
-    ingredients: PropTypes.string,
+    selectedIngredients: PropTypes.array,
+    availableIngredients: PropTypes.array,
     errors: PropTypes.object,
     submitError: PropTypes.string,
   };
@@ -27,6 +30,9 @@ export default class Container extends React.Component {
     event.preventDefault();
     this.props.onChange(event);
   }
+  handleSelectChange(event, value) {
+    this.props.onSelect(event, value);
+  }
   render() {
     const {
       title,
@@ -36,7 +42,8 @@ export default class Container extends React.Component {
       phone,
       weight,
       calories,
-      ingredients,
+      selectedIngredients,
+      availableIngredients,
       errors,
       submitError,
     } = this.props;
@@ -53,9 +60,13 @@ export default class Container extends React.Component {
             phone={phone}
             weight={weight}
             calories={calories}
-            ingredients={ingredients}
             errors={errors}
             onInputChange={(event) => this.handleInputChange(event)}
+          />
+          <SelectList
+            selectedIngredients={selectedIngredients}
+            availableIngredients={availableIngredients}
+            onSelect={(event, value) => this.handleSelectChange(event, value)}
           />
           <SubmitMessage message={submitError} />
           <Submit submit={() => this.handleSubmit()} />

@@ -1,12 +1,13 @@
 /* eslint-disable max-lines */
 import React from "react";
 import { postOrder } from "./../service/orders";
+import { getIngredients } from "./../service/ingredients";
 import { Header } from "./../components/Shared/header";
 import Container from "../components/Form/container.js";
 import { validateInputValue, isErrors } from "../utils/formValidation";
 import { FORM } from "./../utils/labels";
 import "./../styles/Form.scss";
-
+import "./../styles/Details.scss";
 export default class Form extends React.Component {
   constructor() {
     super();
@@ -17,10 +18,26 @@ export default class Form extends React.Component {
       phone: null,
       weight: null,
       calories: null,
-      ingredients: null,
+      selectedIngredients: [],
       errors: {},
       submitError: null,
+      availableIngredients: [],
     };
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await getIngredients();
+      this.setState({
+        availableIngredients: response.data,
+      });
+    } catch (error) {
+      console.log(`Axios request failed: ${error}`);
+    } finally {
+      this.setState({
+        isLoading: false,
+      });
+    }
   }
 
   sweepState(state) {
@@ -53,6 +70,11 @@ export default class Form extends React.Component {
     this.setState({ [key]: value });
   }
 
+  handleSelect(event, value) {
+    console.log("this is value in Form:");
+    console.log(value);
+  }
+
   render() {
     const {
       name,
@@ -60,7 +82,8 @@ export default class Form extends React.Component {
       phone,
       weight,
       calories,
-      ingredients,
+      selectedIngredients,
+      availableIngredients,
       errors,
       submitError,
     } = this.state;
@@ -75,11 +98,13 @@ export default class Form extends React.Component {
           phone={phone}
           weight={weight}
           calories={calories}
-          ingredients={ingredients}
+          selectedIngredients={selectedIngredients}
+          availableIngredients={availableIngredients}
           errors={errors}
           submitError={submitError}
           onClick={(event) => this.handleSubmit(event)}
           onChange={(event) => this.handleInputChange(event)}
+          onSelect={(event, value) => this.handleSelect(event, value)}
         />
       </div>
     );
