@@ -4,6 +4,6 @@ export const postOrder = (payload) =>
   Instance({
     method: "POST",
     url: `/orders`,
-    headers: { "Content-Type": "multipart/form-data" },
+    headers: { "Content-Type": "application/json" },
     data: payload,
   });
