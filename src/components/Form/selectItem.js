@@ -5,21 +5,20 @@ export const SelectItem = (props) => {
   SelectItem.propTypes = {
     ingredient: PropTypes.object.isRequired,
     onSelect: PropTypes.func.isRequired,
+    active: PropTypes.bool,
   };
   if (!props) {
     return null;
   }
-  const { onSelect } = props;
-  const { ingredient } = props;
+  const { onSelect, ingredient, active } = props;
   function handleSelect() {
     onSelect(ingredient);
   }
+  const activeClass = active
+    ? "form__ingredients__item form__ingredients__item__active"
+    : "form__ingredients__item";
   return (
-    <div
-      key={ingredient._id}
-      className={"details__ingredients__item"}
-      onClick={handleSelect}
-    >
+    <div key={ingredient._id} className={activeClass} onClick={handleSelect}>
       <p>{ingredient.name}</p>
     </div>
   );

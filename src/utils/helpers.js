@@ -12,6 +12,28 @@ export const removeOmittedKeys = (list, keys) => {
   return listWithoutKeys;
 };
 
+export function markIngredients(availableList, selectedList) {
+  const mappedList = availableList.map((item) => {
+    const mappedItem = {
+      ...item,
+      selected: false,
+    };
+    return mappedItem;
+  });
+  if (!selectedList === undefined || selectedList.length === 0) {
+    return mappedList;
+  }
+  selectedList.forEach((selectedItem) => {
+    const mappedItemIndex = mappedList
+      .map((item) => item._id)
+      .indexOf(selectedItem._id);
+    mappedList[mappedItemIndex].selected
+      ? (mappedList[mappedItemIndex].selected = false)
+      : (mappedList[mappedItemIndex].selected = true);
+  });
+  return mappedList;
+}
+
 export function toggleSelectedIngredient(vm, ingredient) {
   const ingredientIndex = vm.state.selectedIngredients
     .map((item) => item._id)

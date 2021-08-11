@@ -59,6 +59,46 @@
     }
   }
 
+  &__ingredients {
+    &__header {
+      p {
+        font-size: map-get($size, "font") * 1.15;
+        font-weight: map-get($size, "font__weight--bold");
+        text-align: left;
+        margin-bottom: map-get($size, "margin");
+        margin-left: map-get($size, "margin") * 0.3;
+      }
+    }
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      @include border__radius;
+      @include item__shadow;
+      padding: map-get($size, "padding");
+      margin: map-get($size, "margin") * 0.3;
+
+      p {
+        font-size: map-get($size, "font") * 1;
+        font-weight: map-get($size, "font__weight--regular");
+        margin: 0;
+      }
+
+      &:hover {
+        @include button__shadow;
+        cursor: pointer;
+        color: map-get($palette, primary);
+      }
+
+      &__active {
+        color: map-get($palette, primary);
+      }
+    }
+  }
+
   &__submit {
     @include border__radius;
     font-size: map-get($size, "font");

@@ -8,7 +8,6 @@ import { validateInputValue, isErrors } from "../utils/formValidation";
 import { toggleSelectedIngredient } from "./../utils/helpers";
 import { FORM } from "./../utils/labels";
 import "./../styles/Form.scss";
-import "./../styles/Details.scss";
 export default class Form extends React.Component {
   constructor() {
     super();

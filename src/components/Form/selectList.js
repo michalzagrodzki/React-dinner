@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SelectItem } from "./selectItem";
+import { markIngredients } from "./../../utils/helpers";
 
 export const SelectList = (props) => {
   SelectList.propTypes = {
@@ -11,24 +12,27 @@ export const SelectList = (props) => {
   if (!props) {
     return null;
   }
-  console.log("available ingredients");
-  console.log(props.availableIngredients);
   const { onSelect } = props;
-  const { availableIngredients } = props;
+  const { availableIngredients, selectedIngredients } = props;
+  const ingredients = markIngredients(
+    availableIngredients,
+    selectedIngredients
+  );
   function handleSelect(value) {
     onSelect(value);
   }
   return (
     <div>
-      <div className={"details__ingredients__header"}>
+      <div className={"form__ingredients__header"}>
         <p>Please select ingredients to your dinner</p>
       </div>
-      <div className={"details__ingredients__container"}>
-        {availableIngredients.map((item, index) => (
+      <div className={"form__ingredients__container"}>
+        {ingredients.map((item, index) => (
           <SelectItem
             key={item._id}
             ingredient={item}
             onSelect={handleSelect}
+            active={item.selected}
           />
         ))}
       </div>
