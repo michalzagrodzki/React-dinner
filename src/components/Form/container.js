@@ -30,8 +30,8 @@ export default class Container extends React.Component {
     event.preventDefault();
     this.props.onChange(event);
   }
-  handleSelectChange(event, value) {
-    this.props.onSelect(event, value);
+  handleSelectChange(value) {
+    this.props.onSelect(value);
   }
   render() {
     const {
@@ -66,7 +66,7 @@ export default class Container extends React.Component {
           <SelectList
             selectedIngredients={selectedIngredients}
             availableIngredients={availableIngredients}
-            onSelect={(event, value) => this.handleSelectChange(event, value)}
+            onSelect={(value) => this.handleSelectChange(value)}
           />
           <SubmitMessage message={submitError} />
           <Submit submit={() => this.handleSubmit()} />

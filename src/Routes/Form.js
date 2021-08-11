@@ -70,7 +70,7 @@ export default class Form extends React.Component {
     this.setState({ [key]: value });
   }
 
-  handleSelect(event, value) {
+  handleSelect(value) {
     console.log("this is value in Form:");
     console.log(value);
   }
@@ -104,7 +104,7 @@ export default class Form extends React.Component {
           submitError={submitError}
           onClick={(event) => this.handleSubmit(event)}
           onChange={(event) => this.handleInputChange(event)}
-          onSelect={(event, value) => this.handleSelect(event, value)}
+          onSelect={(value) => this.handleSelect(value)}
         />
       </div>
     );

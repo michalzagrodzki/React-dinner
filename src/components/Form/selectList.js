@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { SelectItem } from "./selectItem";
 
 export const SelectList = (props) => {
   SelectList.propTypes = {
@@ -14,8 +15,8 @@ export const SelectList = (props) => {
   console.log(props.availableIngredients);
   const { onSelect } = props;
   const { availableIngredients } = props;
-  function handleSelect(event, value) {
-    onSelect(event, "value");
+  function handleSelect(value) {
+    onSelect(value);
   }
   return (
     <div>
@@ -24,13 +25,11 @@ export const SelectList = (props) => {
       </div>
       <div className={"details__ingredients__container"}>
         {availableIngredients.map((item, index) => (
-          <div
+          <SelectItem
             key={item._id}
-            className={"details__ingredients__item"}
-            onClick={handleSelect}
-          >
-            <p>{item.name}</p>
-          </div>
+            ingredient={item}
+            onSelect={handleSelect}
+          />
         ))}
       </div>
     </div>
