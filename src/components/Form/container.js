@@ -23,8 +23,8 @@ export default class Container extends React.Component {
     submitError: PropTypes.string,
   };
 
-  handleSubmit() {
-    this.props.onClick();
+  handleSubmit(event) {
+    this.props.onClick(event);
   }
   handleInputChange(event) {
     event.preventDefault();
@@ -69,7 +69,7 @@ export default class Container extends React.Component {
             onSelect={(value) => this.handleSelectChange(value)}
           />
           <SubmitMessage message={submitError} />
-          <Submit submit={() => this.handleSubmit()} />
+          <Submit submit={(event) => this.handleSubmit(event)} />
         </form>
       </div>
     );

@@ -45,7 +45,8 @@ export default class Form extends React.Component {
     return state;
   }
 
-  async handleSubmit() {
+  async handleSubmit(event) {
+    event.preventDefault();
     const filteredState = this.sweepState(this.state);
     if (!isErrors(filteredState.errors)) {
       this.setState({ submitError: null });
