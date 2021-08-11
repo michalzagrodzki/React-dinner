@@ -5,6 +5,7 @@ import { getIngredients } from "./../service/ingredients";
 import { Header } from "./../components/Shared/header";
 import Container from "../components/Form/container.js";
 import { validateInputValue, isErrors } from "../utils/formValidation";
+import { toggleSelectedIngredient } from "./../utils/helpers";
 import { FORM } from "./../utils/labels";
 import "./../styles/Form.scss";
 import "./../styles/Details.scss";
@@ -70,9 +71,8 @@ export default class Form extends React.Component {
     this.setState({ [key]: value });
   }
 
-  handleSelect(value) {
-    console.log("this is value in Form:");
-    console.log(value);
+  handleSelect(ingredient) {
+    toggleSelectedIngredient(this, ingredient);
   }
 
   render() {
