@@ -12,6 +12,7 @@ export default class Form extends React.Component {
   constructor() {
     super();
     this.state = {
+      title: "Custom dinner",
       isLoading: true,
       name: null,
       email: null,
@@ -40,18 +41,23 @@ export default class Form extends React.Component {
     }
   }
 
-  sweepState(state) {
-    delete state.isLoading;
-    return state;
+  parseState(state) {
+    const localState = { ...state };
+    localState.ingredients = localState.selectedIngredients;
+    delete localState.isLoading;
+    delete localState.submitError;
+    delete localState.availableIngredients;
+    delete localState.selectedIngredients;
+    return localState;
   }
 
   async handleSubmit(event) {
     event.preventDefault();
-    const filteredState = this.sweepState(this.state);
+    const filteredState = this.parseState(this.state);
     if (!isErrors(filteredState.errors)) {
       this.setState({ submitError: null });
-      const payload = { body: filteredState };
-      await postOrder(payload);
+      delete filteredState.errors;
+      await postOrder(filteredState);
     } else {
       this.setState({ submitError: "Please check input errors" });
     }
